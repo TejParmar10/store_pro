@@ -1,0 +1,175 @@
+{
+    "icecreams":[
+      {
+        "flavor": "Pistachio",
+        "description": "Nutty and delicious pistachio ice cream with a hint of salt",
+        "toppings": ["Chopped Pistachios", "Honey Drizzle"],
+        "price": 5.99,
+        "image": "https://images.unsplash.com/photo-1694071073219-237a92d95b38?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "ingredients": [
+          {
+            "name": "Pistachio Nuts",
+            "quantity": "1/2 cup"
+          },
+          {
+            "name": "Honey",
+            "quantity": "2 tbsp"
+          },
+          {
+            "name": "Vanilla Ice Cream",
+            "quantity": "1 pint"
+          },
+          {
+            "name": "Heavy Cream",
+            "quantity": "1/2 cup"
+          },
+          {
+            "name": "Salt",
+            "quantity": "1/4 tsp"
+          }
+        ]
+      },
+      {
+        "flavor": "Caramel Swirl",
+        "description": "Sweet and buttery caramel ice cream with a swirl of rich caramel sauce",
+        "toppings": ["Salted Caramel", "Caramel Popcorn"],
+        "price": 5.79,
+        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "ingredients": [
+          {
+            "name": "Caramel Sauce",
+            "quantity": "1/2 cup"
+          },
+          {
+            "name": "Caramel Candy",
+            "quantity": "1/4 cup"
+          },
+          {
+            "name": "Vanilla Ice Cream",
+            "quantity": "1 pint"
+          },
+          {
+            "name": "Heavy Cream",
+            "quantity": "1/4 cup"
+          },
+          {
+            "name": "Salt",
+            "quantity": "1/4 tsp"
+          }
+        ]
+      },
+      {
+        "flavor": "Chocolate Chip Cookie Dough",
+        "description": "Chocolate chip cookie dough ice cream with chunks of chocolate chip cookie dough",
+        "toppings": ["Chocolate Sauce", "Whipped Cream"],
+        "price": 5.59,
+        "image": "https://images.unsplash.com/photo-1559622214-f8a9850965bb?q=80&w=2565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "ingredients": [
+          {
+            "name": "Chocolate Chip Cookie Dough",
+            "quantity": "1 cup"
+          },
+          {
+            "name": "Vanilla Ice Cream",
+            "quantity": "1 pint"
+          },
+          {
+            "name": "Chocolate Sauce",
+            "quantity": "1/4 cup"
+          },
+          {
+            "name": "Whipped Cream",
+            "quantity": "1/2 cup"
+          }
+        ]
+      },
+      {
+        "flavor": "Mango Tango",
+        "description": "Tropical delight with chunks of fresh mango and a swirl of tangy mango sorbet",
+        "toppings": ["Toasted Coconut Flakes", "Lime Zest"],
+        "price": 6.49,
+        "image": "https://images.unsplash.com/photo-1524494904082-f4a0993b5ec0?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "ingredients": [
+          {
+            "name": "Fresh Mango",
+            "quantity": "1 cup, diced"
+          },
+          {
+            "name": "Mango Sorbet",
+            "quantity": "1/2 cup"
+          },
+          {
+            "name": "Coconut Cream",
+            "quantity": "1 cup"
+          },
+          {
+            "name": "Lime Juice",
+            "quantity": "2 tbsp"
+          },
+          {
+            "name": "Vanilla Wafers",
+            "quantity": "1/2 cup, crushed"
+          }
+        ]
+      },
+      {
+        "flavor": "Salted Caramel Pretzel",
+        "description": "Salty and sweet with a crunchy pretzel swirl and a drizzle of rich caramel",
+        "toppings": ["Chopped Pretzels", "Caramel Sauce"],
+        "price": 5.99,
+        "image": "https://images.unsplash.com/photo-1469428946640-844b286ebf50?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "ingredients": [
+          {
+            "name": "Pretzels",
+            "quantity": "1 cup, crushed"
+          },
+          {
+            "name": "Caramel Sauce",
+            "quantity": "1/2 cup"
+          },
+          {
+            "name": "Brown Sugar",
+            "quantity": "1/4 cup"
+          },
+          {
+            "name": "Vanilla Ice Cream",
+            "quantity": "1 pint"
+          },
+          {
+            "name": "Sea Salt",
+            "quantity": "1/4 tsp"
+          }
+        ]
+      },
+      {
+        "flavor": "Double Chocolate Brownie",
+        "description": "Chocolate overload with chunks of brownie batter and a decadent chocolate fudge swirl",
+        "toppings": ["Chocolate Shavings", "Whipped Cream"],
+        "price": 6.29,
+        "image": "https://images.unsplash.com/photo-1597648152428-f883fbc9c873?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "ingredients": [
+          {
+            "name": "Brownie Batter",
+            "quantity": "1/2 cup"
+          },
+          {
+            "name": "Chocolate Fudge Sauce",
+            "quantity": "1/3 cup"
+          },
+          {
+            "name": "Cocoa Powder",
+            "quantity": "1/4 cup"
+          },
+          {
+            "name": "Vanilla Ice Cream",
+            "quantity": "1 pint"
+          },
+          {
+            "name": "Milk Chocolate Chips",
+            "quantity": "1/2 cup"
+          }
+        ]
+      }  
+    ]
+  }
+  
