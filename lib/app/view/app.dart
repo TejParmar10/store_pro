@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:store_pro/counter/counter.dart';
 import 'package:store_pro/l10n/l10n.dart';

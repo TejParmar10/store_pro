@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:store_pro/product_store/models/app_state_model.dart';
 
 class CartView extends StatefulWidget {
   const CartView({super.key});
@@ -14,6 +16,9 @@ class _CartViewState extends State<CartView> {
       appBar: AppBar(
         title: Text("Shopping Cart"),
       ),
+      body: Consumer<AppStateModel>(builder: (context, value, child) {
+        return Container();
+      }),
     );
   }
 }
