@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 // import
 import 'package:flutter/widgets.dart';
@@ -26,7 +27,7 @@ class ProductItem extends StatelessWidget {
         style: Styles.productRowitemprice,
       ),
       trailing: IconButton(
-        icon: Icon(Icons.add_shopping_cart),
+        icon: Icon(Ionicons.add_circle_outline),
         onPressed: () {
           Provider.of<AppStateModel>(context, listen: false)
               .addProductsInCart(icecream.id!);

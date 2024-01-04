@@ -16,6 +16,7 @@ dependencies:
     sdk: flutter
   google_fonts: ^6.1.0
   intl: ^0.18.0
+  ionicons: ^0.2.2
 
 dev_dependencies:
   bloc_test: ^9.1.4
@@ -27,6 +28,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
-  
+
   assets:
     - assets/icecream.json

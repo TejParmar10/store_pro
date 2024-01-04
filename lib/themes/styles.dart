@@ -103,4 +103,14 @@ abstract class Styles {
       fontSize: 14,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.normal);
+  static const TextStyle deliveryTimeLabel = TextStyle(
+      color: Color.fromRGBO(
+        0,
+        0,
+        0,
+        1,
+      ),
+      fontSize: 14,
+      fontStyle: FontStyle.normal,
+      fontWeight: FontWeight.normal);
 }
