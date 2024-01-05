@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:store_pro/product_store/models/app_state_model.dart';
 import 'package:store_pro/product_store/models/icecream.dart';
 import 'package:store_pro/themes/styles.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key, required this.icecream});
@@ -31,6 +32,8 @@ class ProductItem extends StatelessWidget {
         onPressed: () {
           Provider.of<AppStateModel>(context, listen: false)
               .addProductsInCart(icecream.id!);
+          VxToast.show(context,
+              msg: "Added to Cart!!", position: VxToastPosition.center);
         },
       ),
     );

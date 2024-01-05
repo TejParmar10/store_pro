@@ -7,6 +7,12 @@ double _salesTaxRate = 0.18;
 double _shippingCost = 10;
 
 class AppStateModel extends ChangeNotifier {
+  int currentIndex = 0;
+  void changeIndex(int index) {
+    currentIndex = index;
+    notifyListeners();
+  }
+
   List<Icecreams> _availableProducts =
       []; //here icecreams is basically the products
   final _productsInCart = <int, int>{};
@@ -20,6 +26,10 @@ class AppStateModel extends ChangeNotifier {
 
   List<Icecreams> get getProducts {
     return _availableProducts;
+  }
+
+  Icecreams getProductById(int id) {
+    return _availableProducts.firstWhere((element) => element.id == id);
   }
 
   int get totalCartQuantity {

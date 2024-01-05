@@ -1,10 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:provider/provider.dart';
 import 'package:store_pro/product_store/models/app_state_model.dart';
+import 'package:store_pro/product_store/widgets/cart_item.dart';
 import 'package:store_pro/themes/styles.dart';
 
 class CartView extends StatefulWidget {
@@ -22,6 +24,7 @@ class _CartViewState extends State<CartView> {
   String? address;
   String? mobile;
   DateTime? dateTime = DateTime.now();
+  final formkey = GlobalKey<FormState>();
   Widget _buildName() {
     return TextFormField(
       decoration: const InputDecoration(
@@ -138,7 +141,7 @@ class _CartViewState extends State<CartView> {
                 ],
               ),
               Text(
-                DateFormat.yMMMd().add_jm().format(dateTime!),
+                DateFormat.yMMMd().add_jm().format(dateTime ?? DateTime.now()),
                 style: Styles.deliveryTimeLabel,
               )
             ],
@@ -159,23 +162,98 @@ class _CartViewState extends State<CartView> {
           padding: const EdgeInsets.all(16.0),
           child: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildName(),
+              ExpansionTile(
+                title: Text("Address Detail"),
+                children: [
+                  Form(
+                    key: formkey,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: _buildName(),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: _buildEmail(),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: _buildMobile(),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: _buildAddress(),
+                        ),
+                        _builDateTimePicker()
+                      ],
+                    ),
+                  ),
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildEmail(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildMobile(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildAddress(),
-              ),
-              _builDateTimePicker()
+              if (value.productsInCart.isNotEmpty) ...[
+                ListView.builder(
+                  itemBuilder: (context, index) {
+                    return CartItem(
+                      product: value.getProductById(
+                        value.productsInCart.keys.toList()[index],
+                      ),
+                      qty: value.productsInCart.values.toList()[index],
+                    );
+                  },
+                  itemCount: value.productsInCart.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                ),
+                Divider(),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Total",
+                        style: Styles.productRowtotal,
+                      ),
+                      Text(
+                        '₹ ${value.subTotalCost}',
+                        style: Styles.productRowtotal,
+                      ),
+                    ],
+                  ),
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(15.0),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //     children: [
+                //       const Text(
+                //         "Shipping + Tax",
+                //         style: Styles.productRowitemprice,
+                //       ),
+                //       Text(
+                //         '₹ ${value.shippingCostItem} + ${value.taxCost}',
+                //         style: Styles.productRowtotal,
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                const Divider(),
+                ElevatedButton(
+                  onPressed: () {
+                    if (formkey.currentState!.validate()) {
+                      formkey.currentState!.save();
+                      value.clearCart();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Order Placed Successfully"),
+                        ),
+                      );
+                    }
+                  },
+                  child: const Text("Place Order"),
+                ),
+              ],
             ],
           ),
         );
