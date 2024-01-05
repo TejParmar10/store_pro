@@ -4,7 +4,7 @@ import 'package:store_pro/product_store/models/icecream.dart';
 import 'package:store_pro/product_store/models/product.dart';
 
 double _salesTaxRate = 0.18;
-double _shippingCost = 10;
+double _shippingCostPerItem = 10;
 
 class AppStateModel extends ChangeNotifier {
   int currentIndex = 0;
@@ -42,13 +42,17 @@ class AppStateModel extends ChangeNotifier {
         .fold(0, (sum, value) => sum + value);
   }
 
-  double get shippingCostItem {
-    return _shippingCost *
-        _productsInCart.values.fold(0, (sum, value) => sum + value);
+  double get shippingCost {
+    return _shippingCostPerItem *
+        _productsInCart.values.fold(0.0, (sum, value) => sum + value);
   }
 
   double get taxCost {
-    return subTotalCost + _shippingCost + taxCost;
+    return subTotalCost * _salesTaxRate;
+  }
+
+  double get totalCost {
+    return subTotalCost + shippingCost + taxCost;
   }
 
   void addProductsInCart(int productid) {

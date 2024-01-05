@@ -211,33 +211,33 @@ class _CartViewState extends State<CartView> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+                      const Text(
+                        "Shipping + Tax(18%)",
+                        style: Styles.productRowitemprice,
+                      ),
+                      Text(
+                        '₹ ${value.shippingCost.toStringAsFixed(2)} + ₹ ${value.taxCost.toStringAsFixed(2)}',
+                        style: Styles.productRowitemprice,
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                       Text(
                         "Total",
                         style: Styles.productRowtotal,
                       ),
                       Text(
-                        '₹ ${value.subTotalCost}',
+                        '₹ ${value.totalCost.toStringAsFixed(2)}',
                         style: Styles.productRowtotal,
                       ),
                     ],
                   ),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(15.0),
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //     children: [
-                //       const Text(
-                //         "Shipping + Tax",
-                //         style: Styles.productRowitemprice,
-                //       ),
-                //       Text(
-                //         '₹ ${value.shippingCostItem} + ${value.taxCost}',
-                //         style: Styles.productRowtotal,
-                //       ),
-                //     ],
-                //   ),
-                // ),
                 const Divider(),
                 ElevatedButton(
                   onPressed: () {

@@ -69,22 +69,22 @@ abstract class Styles {
     scrim: Color(0xFF000000),
   );
   static const TextStyle productRowitemname = TextStyle(
-      color: Color.fromRGBO(
-        0,
-        0,
-        0,
-        0.8,
-      ),
+      // color: Color.fromRGBO(
+      //   0,
+      //   0,
+      //   0,
+      //   0.8,
+      // ),
       fontSize: 18,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.bold);
   static const TextStyle productRowtotal = TextStyle(
-      color: Color.fromRGBO(
-        0,
-        0,
-        0,
-        0.8,
-      ),
+      // color: Color.fromRGBO(
+      //   0,
+      //   0,
+      //   0,
+      //   0.8,
+      // ),
       fontSize: 18,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.bold);
@@ -94,12 +94,12 @@ abstract class Styles {
       // fontStyle: FontStyle.normal,
       fontWeight: FontWeight.w300);
   static const TextStyle searchText = TextStyle(
-      color: Color.fromRGBO(
-        0,
-        0,
-        0,
-        1,
-      ),
+      // color: Color.fromRGBO(
+      //   0,
+      //   0,
+      //   0,
+      //   1,
+      // ),
       fontSize: 14,
       fontStyle: FontStyle.normal,
       fontWeight: FontWeight.normal);
