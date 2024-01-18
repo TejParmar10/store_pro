@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:store_pro/app/constants.dart';
 import 'package:store_pro/product_store/views/home_view.dart';
 
 class LoginView extends StatefulWidget {
@@ -151,10 +152,13 @@ class _LoginViewState extends State<LoginView>
 
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeView()));
+                      Constants.prefs!.setBool("isLoggedIn", true);
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomeView()),
+                        (route) => false,
+                      );
                     },
                     child: Text("CLICK ME!"),
                   ),

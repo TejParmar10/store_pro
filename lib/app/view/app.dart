@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:store_pro/app/constants.dart';
 import 'package:store_pro/counter/counter.dart';
 import 'package:store_pro/l10n/l10n.dart';
 import 'package:store_pro/product_store/views/home_view.dart';
@@ -25,7 +26,9 @@ class App extends StatelessWidget {
                 : Styles.lightColorScheme),
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
-        home: const LoginView(),
+        home: Constants.prefs!.getBool("isLoggedIn") == true
+            ? const HomeView()
+            : const LoginView(),
       ),
     );
   }
